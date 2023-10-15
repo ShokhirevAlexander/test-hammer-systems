@@ -26,4 +26,18 @@
 Главня страница
 ![2023-10-15](https://github.com/ShokhirevAlexander/test-hammer-systems/assets/142152427/146a3e1e-d57c-42c2-889d-a750b986046f)
 
+Ввод номера телефона. Отправляется 4-х значный номер телефона, каждый раз при входе происходит обновление пароля
+![2023-10-15 (1)](https://github.com/ShokhirevAlexander/test-hammer-systems/assets/142152427/ae9b499b-1e53-4f7b-97cd-ea34c17cb790)
+
+Профиль в личной кабинете
+![image](https://github.com/ShokhirevAlexander/test-hammer-systems/assets/142152427/49cc67de-8e81-4d33-a7d5-9c589b83a577)
+
+Вывод номеров телефона пользователей которые ввели инвайт код пользователя (8-962-851-87-53)
+![2023-10-15 (3)](https://github.com/ShokhirevAlexander/test-hammer-systems/assets/142152427/331f16b8-fb8a-4001-85c2-eabd2b0305b5)
+
+
+
+
+
+
 
