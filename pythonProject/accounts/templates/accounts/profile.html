@@ -1,0 +1,52 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
+        <div class="row bg-white shadow-sm">
+            <div class="col border rounded p-5">
+                <h3 class="text-center mb-5">Личный кабинет</h3>
+                <form  action="{% url 'accounts:invite' %}" method="post" id="profileForm">
+                    {% csrf_token %}
+                    <div>
+                        <p>Номер телефона: {{ user.phone_number }}</p>
+                    </div>
+                    <div>
+                        <p>Моя реферальная ссылка: {{ user.invite_code }}</p>
+                    </div>
+                    <div>
+                        {% if he_invited_me %}
+                            <p>Меня пригласил: {{ he_invited_me.he_invited_me }}</p>
+                        {% else %}
+                            <div class="form-group">
+                                <label for="{{ form.invite_code.id_for_label }}">Инвайт-код:</label>
+                                {{ form.invite_code }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <p>Я пригласил:</p>
+                        {% for referral in referral %}
+                          <li>{{ referral.i_invited }}</li>
+                        {% endfor %}<br>
+
+                        {% include 'accounts/paginator.html' %}
+
+                    </div>
+
+                    {% if not he_invited_me %}
+                        <div class="navbar">
+                            <button type="submit" class="btn btn-light btn-lg btn-block">Сохранить</button>
+                        </div>
+                    {% endif %}
+
+                    <div class="navbar">
+                        <button type="submit" class="btn btn-light btn-lg btn-block">
+                          <a href="{% url 'accounts:logout' %}">Выход</a>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

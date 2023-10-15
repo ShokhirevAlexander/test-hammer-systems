@@ -1,0 +1,17 @@
+{% extends 'accounts/base.html' %}
+
+
+{% block content %}
+    <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
+        <div class="row bg-white shadow-sm">
+            <div class="col border rounded p-5">
+                <h3 class="text-center mb-5">Главная страница</h3>
+                <div>
+                    <button type="button" class="btn btn-light btn-lg btn-block">
+                        <a href="{% url 'accounts:register' %}">Войти</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item {% if not referral.has_previous %} disabled {% endif %}">
+            <a class="page-link"
+               href="{% if referral.has_previous %}?page={{ referral.previous_page_number }}{% else %} # {% endif %}"
+               tabindex="-1" aria-disabled="true">Предыдущая</a>
+        </li>
+
+        {% for page in referral.paginator.page_range %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page }}">
+                    {{ page }}
+                </a>
+            </li>
+        {% endfor %}
+
+        <li class="page-item {% if not referral.has_next %} disabled {% endif %}">
+            <a class="page-link"
+               href="{% if referral.has_next %}?page={{ referral.next_page_number }}{% else %} # {% endif %}">Следующая</a>
+        </li>
+    </ul>
+</nav>
